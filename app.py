@@ -110,7 +110,7 @@ def analyze_food_image(image: Image.Image) -> Optional[str]:
 Provide a concise response about any dangerous ingredients or safety issues found."""
 
         payload = {
-            "model": "mistralai/mistral-small-3.2-24b-instruct:free",
+            "model": "google/gemini-2.5-flash-image-preview:free",
             "messages": [
                 {
                     "role": "user",
@@ -163,11 +163,11 @@ def main():
 
     with col1:
         st.markdown("📁 Upload Image")
-        uploaded_file = st.file_uploader("", type=SUPPORTED_FORMATS, label_visibility="collapsed")
+        uploaded_file = st.file_uploader("Upload food image", type=SUPPORTED_FORMATS, label_visibility="collapsed")
 
     with col2:
         st.markdown("📸 Take Photo")
-        camera_image = st.camera_input("", label_visibility="collapsed")
+        camera_image = st.camera_input("Take photo of food", label_visibility="collapsed")
 
     # Auto-analyze when image is selected
     selected_image = None
