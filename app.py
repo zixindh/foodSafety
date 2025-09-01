@@ -110,7 +110,7 @@ def analyze_food_image(image: Image.Image) -> Optional[str]:
 Provide a concise response about any dangerous ingredients or safety issues found."""
 
         payload = {
-            "model": "google/gemini-2.5-flash-image-preview:free",
+            "model": "moonshotai/kimi-vl-a3b-thinking:free",
             "messages": [
                 {
                     "role": "user",
